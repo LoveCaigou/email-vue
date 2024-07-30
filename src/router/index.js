@@ -4,21 +4,20 @@ import LoginView from '@/views/LoginView.vue'
 import MianView from '@/views/MainView.vue'
 import { useToast } from "vue-toastification";
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
       name: 'main',
       component: MianView,
-      // meta: {
-      //   requiresAuth: true // 添加元数据以指示需要身份验证
-      // }
+      meta: {
+        requiresAuth: true // 添加元数据以指示需要身份验证
+      }
     },
     {
       path: '/login',
       name: 'login',
       component: LoginView,
-
     },
   ]
 })
