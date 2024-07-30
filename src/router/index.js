@@ -28,8 +28,8 @@ router.beforeEach((to, from, next) => {
   const localTime = localStorage.getItem('timer');
   const days = 7;
   if (to.meta.requiresAuth) {
-    const user = "1f2a05329a699e502956d26c6181aebc";
-    const pwd = "36914f2f5817588a6ce099256bd972ef";
+    const user = "21232f297a57a5a743894a0e4a801fc3";
+    const pwd  = "21232f297a57a5a743894a0e4a801fc3";
     if (username == user && password == pwd) {
       const nowTimer  = new Date().getTime();
       const expireTime= nowTimer+( 24 * 60 * 60 * 1000 * days)

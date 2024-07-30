@@ -11,7 +11,8 @@ const formData = ref({
   pwd: "",
 });
 
-function handleFrom(){
+function handleFrom(event){
+    event.preventDefault();
     if(formData.value.user&&formData.value.pwd){
         const user = md5(formData.value.user);
         const pwd  = md5(formData.value.pwd);
@@ -28,7 +29,7 @@ function handleFrom(){
 </script>
 <template>
     <div class="h-screen bg-white flex items-center justify-center">
-        <div
+        <form @submit="handleFrom"
             class=" w-full md:max-w-[600px] min-h-[300px] border rounded shadow shadow-gray-300 text-neutral-800 p-10 mb-20">
             <p class="text-center font-black text-3xl">Login to see more</p>
             <p class="text-center text-gray-400 mt-2.5">You can enjoy more quality services after landing</p>
@@ -44,8 +45,8 @@ function handleFrom(){
             </div>
 
             <button
-                class="border w-full bg-blue text-white rounded-[10px] h-12 text-lg transition-500 hover:bg-hblue mt-10" @click="handleFrom" >Continue</button>
-        </div>
+                class="border w-full bg-blue text-white rounded-[10px] h-12 text-lg transition-500 hover:bg-hblue mt-10" type="submit" >Continue</button>
+        </form>
     </div>
 </template>
 <style scoped>
