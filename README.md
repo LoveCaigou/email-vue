@@ -1,6 +1,10 @@
 
 # Infomation
 
+>> npm run build 
+>> 将dist推送到gh-pages分支
+>> git subtree push --prefix dist origin gh-pages 
+
 username        NFTX        
 pwd        admin1209
 
